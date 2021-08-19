@@ -1,15 +1,16 @@
 import React from 'react'
-
-function Demo(){
-    //const a=React.useState()//a是数组，第一个元素是状态，第二个是更新状态的方法
-    const [count, setCount]=React.useState(0)
-    function add(){
-        setCount(count+1)
-    }
-    return(
+//函数中没有componentDidMount
+const Demo = () => {
+    const [count,setCount]=React.useState(0)
+    React.useEffect(()=>{
+        setInterval(()=>{
+            setCount(count=>count+1)
+        },1000)
+    },[])//[]代表谁也不检测，可以监测count，变化是刷新，数字会越来越快
+    return (
         <div>
-            <h2>The current value is:{count}</h2>
-            <button onClick={add}>plus one</button>
+            <h2>The current value is :{count}</h2>
+            
         </div>
     )
 }
