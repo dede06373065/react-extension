@@ -10,7 +10,7 @@ export default class Demo extends Component {
         this.setState({ count: count + 1 },()=>{ console.log('callback里的',this.state.count)})
         console.log('紧接着的',this.state.count)//存在异步更新
         //函数式的setState
-        this.setState(state=>({count:count+1}))
+        this.setState(state=>({count:count+1}))//不存在异步更新 是最新的值
         //this.setState(state=>{count:state.count+1})
 
     }
