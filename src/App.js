@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Demo from './components/Function'
+import Demo from './components/Context'
 
 export default class App extends Component {
     render() {
